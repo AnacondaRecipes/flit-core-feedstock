@@ -9,6 +9,7 @@ source:
   sha256: d75edf5eb324da20d53570a6a6f87f51e606eee8384925cd66a90611140844c7
   folder: source
 
+# flit_core strict has set its confiugraton to use specifically this script.
 build:
   script: python -m pip install --no-deps -vv source/flit_core/
   number: 0
@@ -18,6 +19,8 @@ requirements:
   host:
     - python
     - pip
+    - wheel
+    - setuptools
   run:
     - python
 
@@ -37,8 +40,10 @@ about:
   license_family: BSD
   license_file: source/LICENSE
   summary: Simplified packaging of Python modules
+  description: |
+    Flit is a simple way to put Python packages and modules on PyPI. It only
+    requires a single file to be added to your package, and no configuration in
+    setup.py.
+  doc_source_url: https://flit.readthedocs.io/
+  dev_url: https://flit.readthedocs.io/
 
-extra:
-  recipe-maintainers:
-    - takluyver
-    - beckermr
